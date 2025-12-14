@@ -1,0 +1,102 @@
+# Gradle files
+.gradle/
+build/
+*.apk
+*.ap_
+*.aab
+
+# Local configuration file (sdk path, etc)
+local.properties
+
+# Log/OS Files
+*.log
+.DS_Store
+
+# Android Studio generated files and folders
+.idea/
+.classpath
+.c9/
+*.class
+*.dex
+*.ear
+*.iml
+*.iws
+*.jar
+*.jks
+*.keystore
+*.so
+*.swp
+*.zip
+.project
+.properties
+.settings/
+bin/
+gen/
+out/
+
+# IntelliJ
+*.iml
+.idea/
+misc.xml
+deploymentTargetDropDown.xml
+render.experimental.xml
+
+# The .vscode folder contains launch configuration and tasks you configure in
+# VS Code which you may wish to be included in version control, so this line
+# is commented out by default.
+#.vscode/
+
+# Flutter/Dart/Pub related
+**/doc/api/
+**/ios/Flutter/.last_build_id
+**/ios/Flutter/Flutter.podspec
+**/ios/Flutter/Flutter.framework
+**/ios/Flutter/Flutter.framework/Flutter
+**/ios/Flutter/Generated.xcconfig
+**/ios/Flutter/ephemeral/
+**/ios/Flutter/app.flx
+**/ios/Flutter/app.zip
+**/ios/Flutter/flutter_assets/
+**/ios/Flutter/flutter_export_environment.sh
+**/ios/Flutter/local.properties
+**/ios/Flutter/plugins.json
+**/ios/Flutter/release/
+**/ios/Runner.xcodeproj/project.xcworkspace/xcUserData/
+**/ios/Runner.xcworkspace/xcUserData/
+**/ios/flutter/Flutter.podspec
+**/ios/flutter/
+**/ios/runner/Flutter/Flutter.framework
+**/ios/runner/Flutter/Flutter.framework/Flutter
+**/ios/runner/Flutter/Generated.xcconfig
+**/ios/runner/Flutter/ephemeral/
+**/ios/runner/Flutter/app.flx
+**/ios/runner/Flutter/app.zip
+**/ios/runner/Flutter/flutter_assets/
+**/ios/runner/Flutter/flutter_export_environment.sh
+**/ios/runner/Flutter/local.properties
+**/ios/runner/Flutter/plugins.json
+**/ios/runner/Flutter/release/
+**/ios/runner/GeneratedPluginRegistrant.swift
+**/ios/runner/GoogleService-Info.plist
+**/ios/runner/Runner.xcodeproj/project.xcworkspace/xcUserData/
+**/ios/runner/Runner.xcworkspace/xcUserData/
+**/ios/runner/Runner.xcworkspace/xcshareddata/xcschemes/Runner.xcscheme
+**/ios/runner/Runner.xcodeproj/project.xcworkspace/xcshareddata/IDEWorkspaceChecks.plist
+**/ios/runner/Runner.xcodeproj/xcshareddata/xcschemes/Runner.xcscheme
+**/ios/runner/Runner/GeneratedPluginRegistrant.swift
+**/ios/runner/Runner/GoogleService-Info.plist
+**/ios/runner/Podfile
+**/ios/runner/Podfile.lock
+**/ios/runner/Pods/
+**/ios/runner/Pods/**/*
+**/ios/runner/ios_build_cache/
+**/ios/runner/ios_build_cache/**/*
+**/ios/runner/ios_build_cache_release/
+**/ios/runner/ios_build_cache_release/**/*
+**/ios/runner/ios_build_cache_profile/
+**/ios/runner/ios_build_cache_profile/**/*
+**/ios/runner/ios_build_cache_release_universal/
+**/ios/runner/ios_build_cache_release_universal/**/*
+
+# Exceptions to above rules.
+!/packages/flutter_tools/test/data/dart_dependencies_test/**/.packages

@@ -1,0 +1,261 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:background="@color/md_theme_background"
+    tools:context=".ui.activities.MainActivity">
+
+    <!-- Fixed Header with Gradient and Value Indicator -->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@drawable/gradient_background"
+        android:orientation="vertical"
+        android:padding="32dp"
+        android:gravity="center">
+
+        <TextView
+            android:id="@+id/welcomeTitle"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Welcome to Quizzical"
+            android:textAppearance="@style/TextAppearance.QuizApp.HeadlineLarge"
+            android:textColor="@color/md_theme_on_primary"
+            android:textStyle="bold" />
+
+    </LinearLayout>
+
+    <!-- Scrollable Content -->
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:fillViewport="true">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:padding="24dp">
+
+            <!-- Statistics Card -->
+            <com.google.android.material.card.MaterialCardView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="24dp"
+                app:cardElevation="2dp"
+                app:cardCornerRadius="20dp"
+                app:cardBackgroundColor="@color/md_theme_primary_container">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:padding="20dp">
+
+                    <!-- Total Quizzes -->
+                    <LinearLayout
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:orientation="vertical"
+                        android:gravity="center">
+
+                        <TextView
+                            android:id="@+id/quizzesCountText"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="0"
+                            android:textAppearance="@style/TextAppearance.QuizApp.DisplaySmall"
+                            android:textColor="@color/md_theme_on_primary_container" />
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="Quizzes"
+                            android:textAppearance="@style/TextAppearance.QuizApp.LabelMedium"
+                            android:textColor="@color/md_theme_on_primary_container"
+                            android:layout_marginTop="4dp" />
+                    </LinearLayout>
+
+                    <!-- Divider -->
+                    <View
+                        android:layout_width="1dp"
+                        android:layout_height="match_parent"
+                        android:background="@color/md_theme_outline_variant"
+                        android:layout_marginHorizontal="16dp" />
+
+                    <!-- Average Score -->
+                    <LinearLayout
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:orientation="vertical"
+                        android:gravity="center">
+
+                        <TextView
+                            android:id="@+id/averageScoreText"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="0%"
+                            android:textAppearance="@style/TextAppearance.QuizApp.DisplaySmall"
+                            android:textColor="@color/md_theme_on_primary_container" />
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="Avg Score"
+                            android:textAppearance="@style/TextAppearance.QuizApp.LabelMedium"
+                            android:textColor="@color/md_theme_on_primary_container"
+                            android:layout_marginTop="4dp" />
+                    </LinearLayout>
+
+                </LinearLayout>
+            </com.google.android.material.card.MaterialCardView>
+
+            <!-- Quiz Settings Card -->
+            <com.google.android.material.card.MaterialCardView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="24dp"
+                app:cardElevation="2dp"
+                app:cardCornerRadius="20dp"
+                app:cardBackgroundColor="@color/md_theme_surface_container">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:padding="24dp">
+
+                    <!-- Category Selection -->
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="@string/select_category"
+                        android:textAppearance="@style/TextAppearance.QuizApp.TitleMedium"
+                        android:textColor="@color/md_theme_on_surface"
+                        android:layout_marginBottom="12dp" />
+
+                    <Spinner
+                        android:id="@+id/categorySpinner"
+                        android:layout_width="match_parent"
+                        android:layout_height="56dp"
+                        android:background="@drawable/modern_input"
+                        android:layout_marginBottom="24dp" />
+
+                    <!-- Difficulty Selection -->
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="@string/select_difficulty"
+                        android:textAppearance="@style/TextAppearance.QuizApp.TitleMedium"
+                        android:textColor="@color/md_theme_on_surface"
+                        android:layout_marginBottom="12dp" />
+
+                    <com.google.android.material.chip.ChipGroup
+                        android:id="@+id/difficultyGroup"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        app:singleSelection="true"
+                        app:selectionRequired="true"
+                        android:layout_marginBottom="24dp">
+
+                        <com.google.android.material.chip.Chip
+                            android:id="@+id/easyChip"
+                            style="@style/Widget.MaterialComponents.Chip.Choice"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="@string/difficulty_easy" />
+
+                        <com.google.android.material.chip.Chip
+                            android:id="@+id/mediumChip"
+                            style="@style/Widget.MaterialComponents.Chip.Choice"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="@string/difficulty_medium"
+                            android:checked="true" />
+
+                        <com.google.android.material.chip.Chip
+                            android:id="@+id/hardChip"
+                            style="@style/Widget.MaterialComponents.Chip.Choice"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="@string/difficulty_hard" />
+
+                    </com.google.android.material.chip.ChipGroup>
+
+                    <!-- Number of Questions -->
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="@string/number_of_questions"
+                        android:textAppearance="@style/TextAppearance.QuizApp.TitleMedium"
+                        android:textColor="@color/md_theme_on_surface"
+                        android:layout_marginBottom="12dp" />
+
+                    <com.google.android.material.slider.Slider
+                        android:id="@+id/questionCountSlider"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:valueFrom="5"
+                        android:valueTo="50"
+                        android:value="10"
+                        android:stepSize="5"
+                        app:labelBehavior="gone"
+                        app:thumbColor="@color/md_theme_primary"
+                        app:trackColorActive="@color/md_theme_primary"
+                        app:trackColorInactive="@color/md_theme_surface_variant" />
+
+                    <TextView
+                        android:id="@+id/questionCountText"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="10 questions"
+                        android:textAppearance="@style/TextAppearance.QuizApp.BodyMedium"
+                        android:textColor="@color/md_theme_on_surface_variant"
+                        android:gravity="center" />
+
+                </LinearLayout>
+            </com.google.android.material.card.MaterialCardView>
+
+            <!-- History Button -->
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/historyButton"
+                style="@style/Widget.MaterialComponents.Button.OutlinedButton"
+                android:layout_width="match_parent"
+                android:layout_height="56dp"
+                android:text="@string/history"
+                android:textAppearance="@style/TextAppearance.QuizApp.LabelLarge"
+                android:textColor="@color/md_theme_primary"
+                app:cornerRadius="20dp"
+                app:strokeColor="@color/md_theme_primary"
+                app:strokeWidth="2dp"
+                app:icon="@android:drawable/ic_menu_recent_history"
+                app:iconGravity="textStart"
+                app:iconTint="@color/md_theme_primary"
+                android:layout_marginBottom="16dp" />
+
+            <!-- Start Button -->
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/startButton"
+                android:layout_width="match_parent"
+                android:layout_height="64dp"
+                android:text="@string/start_quiz"
+                android:textAppearance="@style/TextAppearance.QuizApp.LabelLarge"
+                android:textColor="@color/md_theme_on_primary"
+                android:background="@drawable/modern_button"
+                app:cornerRadius="24dp"
+                app:elevation="4dp"
+                app:icon="@android:drawable/ic_media_play"
+                app:iconGravity="textStart"
+                app:iconTint="@color/md_theme_on_primary" />
+
+        </LinearLayout>
+
+    </ScrollView>
+
+</LinearLayout>
+
